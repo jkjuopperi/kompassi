@@ -443,7 +443,7 @@ class Setup:
             slug="artist-alley-application",
             defaults=dict(
                 active_from=now(),
-                key_fields=["name", "email", "reserve"],
+                key_fields=["name", "email", "day", "reserve"],
                 login_required=True,
             ),
         )
