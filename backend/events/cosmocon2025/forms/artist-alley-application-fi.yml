@@ -1,175 +1,115 @@
 title: Taidekujahaku
 layout: vertical
 description: |
-  Lomakkeella haetaan taidekujapaikkaa Matsuconista 8.-9.2.2025.
-
-  Lisää tietoa löydät: <a href="https://cosmocon.fi/xx/">Taidekujan säännöt sivulta</a>
-
-  Haku on auki x.x. - x.x.2025.
-
-  Taidekuja tulee sijaitsemaan xx. Lisätietoa löydät nettisivuiltamme osoitteesta: Jos sinulla herää mitään kysymyksiä voit olla yhteydessä taidekujavastaavaan sähköpostilla: xx@cosmocon.fi
+  Cosmoconin taidekujahaku aukeaa 19.10.2024 ja sulkeutuu 3.11.2024. Haku suoritetaan portfoliohakuna ja jokainen hakija arvioidaan Cosmoconin työryhmän sisältä koostuvan raadin toimesta. Cosmoconin taidekujalla on käytössä ensikertalaiskiintiö. Valintoihin vaikuttavia tekijöitä ovat mm. Soveltuvuus tapahtumaan, tekninen osaaminen ja monipuolisuus.
+  
+  Tarjolla on sekä koko viikonlopun, että yhden päivän pöytiä. Pöydän koko on 140 x 60 cm.
+  Taidekujapaikan hinta koko viikonlopun ajalta on 30€, lauantailta 15€ ja sunnuntailta 10€.
+  Pöytäpaikkoja on rajoitetusti. Hakea voit joko yksin tai yhdessä kaverin kanssa. Muistathan täyttää lomakkeeseen kaikkien hakijoiden tiedot!
+  
+  Ennen lomakkeen täyttämistä, varmistathan että kaikki linkit ovat toimivia ja PDF-tiedostot ladattu pilvipalveluun kuten Google driveen eikä jaettu suoraan tiedostosijaintina tai Canva-linkkinä. Varmista myös, ettei portfoliotiedostosi ole salasanan takana.
+  Tarkemmat ohjeet hakuprosessia varten löydät <a href="https://cosmocon.fi/taidekuja/">nettisivuiltamme</a>
+  
+  Valinnoista ilmoitetaan hakijoille henkilökohtaisesti 15.11.2024 mennessä sähköpostin välityksellä.
+  
+  Mikäli sinulle tulee kysyttävää hausta, olethan yhteyksissä taidekujavastaavaamme: taidekuja@cosmocon.fi
+  
+  Huomioithan, että hakemukset tulee toimittaa tämän hakulomakkeen kautta, sähköpostitse toimitettuja hakemuksia ei oteta huomioon.
 
 fields:
-  - type: StaticText
-    title: Perustiedot
-    slug: basic_info_title
 
   - slug: name
-    title: Etunimi ja sukunimi
+    title: Nimi ja nimimerkki
     type: SingleLineText
+    required: true
+
+  - slug: second_artist
+    title: Haetko yksin vai jaatko pöydän toisen hakijan kanssa?
+    type: SingleSelect
+    required: true
+    choices:
+      - slug: second_no
+        title: Haen yksin
+      - slug: second_yes
+        title: Toisen hakijan kanssa
+        
+  - slug: second_name
+    title: Toisen hakijan nimi ja nimimerkki
+    type: SingleLineText
+    required: false
+
+  - slug: portfolio
+    title: Linkki portfolioon
+    type: SingleLineText
+    required: true
+
+  - slug: experience
+    title: Kujailukokemuksesi?
+    type: SingleSelect
+    required: true
+    choices:
+      - slug: exp_new
+        title: Kujailen ensimmäistä kertaa
+      - slug: exp_newish
+        title: 1-3 kertaa
+      - slug: exp_lessnew
+        title: 4-10 kertaa
+      - slug: exp_experienced
+        title: Enemmän kuin 10 kertaa
+
+  - slug: product_desc
+    title: Kerro hieman itsestäsi ja tuotteistasi, joita olisit tuomassa myyntiin. Voit kertoa myös miksi haluaisit taidekujalle juuri Cosmoconiin
+    type: MultiLineText
+    required: true
+
+  - slug: day
+    title: Haen
+    type: SingleSelect
+    required: true
+    choices:
+      - slug: weekend
+        title: Koko viikonlopun pöytää
+      - slug: sat
+        title: Lauantain pöytää
+      - slug: sun
+        title: Sunnuntain pöytää
+
+  - slug: description
+    title: Esittelyteksti nettisivuillemme ja sosiaaliseen mediaan, mikäli tulet valituksi
+    type: SingleLineText
+    required: true
+
+  - slug: avatar
+    title: Kuvake esittelyn yhteyteen
+    type: FileUpload
     required: true
 
   - slug: email
-    title: Vastuuhenkilön sähköposti
+    title: Sähköpostiosoitteesi, josta tavoitamme sinut mikäli tulet valituksi taidekujalle
     type: SingleLineText
     required: true
 
-  - slug: table_size
-    title: Pöytäkoko
-    type: MultiSelect
-    required: false
-    choices:
-      - slug: small
-        title: 140x50cm
-      - slug: big
-        title: 180x74cm
-
-  - slug: portfolio
-    title: Portfolio
-    helpText: "Yksi (1) portfoliolinkki per taiteilija / ryhmä. Tarkistathan ettei lomake ole suojattu salasanalla tai edellytä kirjautumista."
+  - slug: phone
+    title: Puhelinnumero
     type: SingleLineText
     required: true
 
   - slug: reserve
-    title: Varasija
-    helpText: "Ilmaise halukkuutesi varasijalle. Varasijallisista koostetaan lista joita lähestytään mikäli paikkoja vapautuu. Erillistä varasijalistaa ei julkaista tai ilmoiteta. Voit vapaassa kentässä täsmentää kuinka lyhyellä ajalla olet valmis tulemaan."
+    title: Oletko valmis ottamaan vastaan peruutuspaikan varasijalta?
     type: SingleSelect
     required: true
     choices:
-      - slug: "no"
-        title: En halua jonottaa varasijaa
       - slug: "yes"
-        title: Haluan jonottaa varasijaa
-      - slug: "fast"
-        title: Pääsen nopeallakin varoitusajalla paikalle
-
-  - type: StaticText
-    title: Taustatiedot
-    slug: background_info
-
-  - slug: experience
-    title: Kokemus
-    type: MultiSelect
-    choices:
-      - slug: exp_new
-        title: Aloittelija (alle 5 kujaa takana)
-      - slug: exp_first
-        title: Ensikertaa Matsucon -tapahtumassa
-
-  - slug: location
-    title: Osallistutko tapahtumaan Suomesta vai ulkomailta
-    type: SingleSelect
-    required: true
-    choices:
-      - slug: finland
-        title: Suomesta
-      - slug: abroad
-        title: Ulkomailta
-
-  - slug: helper
-    title: Tuleeko mukanasi avustaja
-    type: SingleSelect
-    required: true
-    choices:
-      - slug: help_yes
         title: Kyllä
-      - slug: help_no
-        title: Ei
+      - slug: "no"
+        title: En
 
-  - slug: help_name
-    title: Avustajan nimi
-    type: SingleLineText
-    required: false
-
-  - slug: comments
-    title: Vapaa sana
-    helpText: "Vapaa alue lisätiedoille ja toiveille. Ilmaisethan jos tarvitset esteettömyyden huomiointia taidekuja sijoituksessa, jotta voimme järjestää mahdollisimman sujuvan pääsyn pöydän ääreen."
-    type: MultiLineText
-    required: false
-
-  - slug: artist_info_title
-    type: StaticText
-    title: Taiteilijatiedot sivuille
-    helpText: "Mikäli toimitte kollektiivina, täytättehän vain yhden taiteilijakohdan. Jätä ylimääräiset kentät tyhjäksi. Huom. Avatar-kuvan koko 200 px x 200 px"
-
-  - type: StaticText
-    title: Taiteilijan 1 tiedot
-    slug: artist_info1
-
-  - slug: artist_name1
-    title: Taiteilijanimi
-    type: SingleLineText
+  - slug: rules
+    title: Olen lukenut ja sisäistänyt annetut ohjeet ja vahvistan, että antamani tiedot ovat todenmukaisia
+    type: SingleSelect
     required: true
-
-  - slug: artist_site1
-    title: Kotisivu
-    type: SingleLineText
-    required: true
-
-  - slug: artist_avatar1
-    title: Avatar
-    type: FileUpload
-    required: true
-
-  - slug: artist_desc1
-    title: Lyhyt kuvaus nettisivuille
-    type: SingleLineText
-    required: true
-
-  - type: StaticText
-    title: Taiteilijan 2 tiedot
-    slug: artist_info2
-
-  - slug: artist_name2
-    title: Taiteilijanimi
-    type: SingleLineText
-    required: false
-
-  - slug: artist_site2
-    title: Kotisivu
-    type: SingleLineText
-    required: false
-
-  - slug: artist_avatar2
-    title: Avatar
-    type: FileUpload
-    required: false
-
-  - slug: artist_desc2
-    title: Lyhyt kuvaus nettisivuille
-    type: SingleLineText
-    required: false
-
-  - type: StaticText
-    title: Taiteilijan 3 tiedot
-    slug: artist_info3
-
-  - slug: artist_name3
-    title: Taiteilijanimi
-    type: SingleLineText
-    required: false
-
-  - slug: artist_site3
-    title: Kotisivu
-    type: SingleLineText
-    required: false
-
-  - slug: artist_avatar3
-    title: Avatar
-    type: FileUpload
-    required: false
-
-  - slug: artist_desc3
-    title: Lyhyt kuvaus nettisivuille
-    type: SingleLineText
-    required: false
+    choices:
+      - slug: "yes"
+        title: Kyllä
+      - slug: "no"
+        title: En
