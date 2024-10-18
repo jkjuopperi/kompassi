@@ -32,7 +32,7 @@ class Setup:
         # self.setup_badges()
         # self.setup_tickets()
         self.setup_intra()
-        # self.setup_forms()
+        self.setup_forms()
 
     def setup_core(self):
         from core.models import Event, Organization, Venue
