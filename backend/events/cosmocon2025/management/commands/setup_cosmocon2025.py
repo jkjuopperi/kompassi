@@ -175,16 +175,15 @@ class Setup:
         #    ),
         # )
 
-    def setup_badges(self):
-        from badges.models import BadgesEventMeta
-
-        (badge_admin_group,) = BadgesEventMeta.get_or_create_groups(self.event, ["admins"])
-        meta, unused = BadgesEventMeta.objects.get_or_create(
-            event=self.event,
-            defaults=dict(
-                admin_group=badge_admin_group,
-            ),
-        )
+    # def setup_badges(self):
+    #     from badges.models import BadgesEventMeta
+    #     (badge_admin_group,) = BadgesEventMeta.get_or_create_groups(self.event, ["admins"])
+    #     meta, unused = BadgesEventMeta.objects.get_or_create(
+    #         event=self.event,
+    #         defaults=dict(
+    #             admin_group=badge_admin_group,
+    #         ),
+    #     )
 
     def setup_programme(self):
         from core.utils import full_hours_between
