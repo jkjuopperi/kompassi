@@ -92,15 +92,13 @@ class SignupExtra(SignupExtraBase):
         help_text="Muuta kerrottavaa? Kysyttävää? Kirjoita se tähän.",
     )
 
+    @classmethod
+    def get_form_class(cls):
+        from .forms import SignupExtraForm
 
-@classmethod
-def get_form_class(cls):
-    from .forms import SignupExtraForm
+        return SignupExtraForm
 
-    return SignupExtraForm
-
-
-# @classmethod
-# def get_programme_form_class(cls):
-#     from .forms import ProgrammeSignupExtraForm
-#     return ProgrammeSignupExtraForm
+    # @classmethod
+    # def get_programme_form_class(cls):
+    #     from .forms import ProgrammeSignupExtraForm
+    #     return ProgrammeSignupExtraForm
